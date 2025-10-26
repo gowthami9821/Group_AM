@@ -1,6 +1,4 @@
 # 🧬 Agentic RNA Biomarker Detection
-<img width="1080" height="1350" alt="Blue and White Modern Organization Structure Instagram Post  (1)" src="https://github.com/user-attachments/assets/256f7620-f6b3-4822-aacd-ded66530b54e" />
-
 
 ## Problem Statement
 
@@ -20,8 +18,7 @@ After detecting biomarker regions, the system can suggest **potential drug candi
 
 ## 🔍 System Architecture
 
-
-
+<img width="1080" height="1350" alt="Blue and White Modern Organization Structure Instagram Post  (1)" src="https://github.com/user-attachments/assets/256f7620-f6b3-4822-aacd-ded66530b54e" />
 ### Agentic AI Orchestrator
 
 * Coordinates multiple tools:
