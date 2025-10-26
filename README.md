@@ -1,9 +1,5 @@
-<img width="1080" height="1350" alt="Blue and White Modern Organization Structure Instagram Post  (1)" src="https://github.com/user-attachments/assets/256f7620-f6b3-4822-aacd-ded66530b54e" />Here’s your README, fully formatted and neatly organized, keeping **all content exactly the same** while improving readability and structure:
-
----
-
 # 🧬 Agentic RNA Biomarker Detection
-![architecture](images/arch.png)
+<img width="1080" height="1350" alt="Blue and White Modern Organization Structure Instagram Post  (1)" src="https://github.com/user-attachments/assets/256f7620-f6b3-4822-aacd-ded66530b54e" />
 
 
 ## Problem Statement
