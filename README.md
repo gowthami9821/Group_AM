@@ -1,17 +1,30 @@
+<img width="1080" height="1350" alt="Blue and White Modern Organization Structure Instagram Post  (1)" src="https://github.com/user-attachments/assets/256f7620-f6b3-4822-aacd-ded66530b54e" />Here’s your README, fully formatted and neatly organized, keeping **all content exactly the same** while improving readability and structure:
+
+---
+
 # 🧬 Agentic RNA Biomarker Detection
+![architecture](images/arch.png)
+
+
 ## Problem Statement
 
-Predicting RNA structure and assessing cancer risk from sequence data remains a challenge due to limited structural databases, complex folding, and fragmented tools. Most labs lack integrated, explainable, and privacy-preserving platforms for actionable cancer risk insights. Our project enables researchers to input RNA sequences, uses local agentic AI for structure prediction and cancer classification, and outputs clear, interpretable results all in one web interface. This accelerates cancer biomarker discovery, empowers clinicians, and ensures compliance, setting a new standard for accessible, explainable, and secure RNA-driven cancer diagnostics with next-generation AI.
+Predicting RNA structure and assessing cancer risk from sequence data remains a challenge due to limited structural databases, complex folding, and fragmented tools. Most labs lack integrated, explainable, and privacy-preserving platforms for actionable cancer risk insights.
+
+**Our project:** enables researchers to input RNA sequences, uses local agentic AI for structure prediction and cancer classification, and outputs clear, interpretable results all in one web interface. This accelerates cancer biomarker discovery, empowers clinicians, and ensures compliance, setting a new standard for accessible, explainable, and secure RNA-driven cancer diagnostics with next-generation AI.
+
+---
 
 ## Overview
 
-This project implements an **Agentic AI pipeline** for detecting **biomarker regions** in RNA 3D structures (.pdb files). It integrates structural bioinformatics tools and a locally running **BioGPT LLM** to automate the workflow — from structure parsing to functional annotation. The project also demonstrates the integration of **LangChain** for orchestrating AI reasoning and **RAG (Retrieval-Augmented Generation)** for combining structured RNA data with external knowledge sources.
+This project implements an **Agentic AI pipeline** for detecting **biomarker regions** in RNA 3D structures (`.pdb` files). It integrates structural bioinformatics tools and a locally running **BioGPT LLM** to automate the workflow — from structure parsing to functional annotation. The project also demonstrates the integration of **LangChain** for orchestrating AI reasoning and **RAG (Retrieval-Augmented Generation)** for combining structured RNA data with external knowledge sources.
 
 After detecting biomarker regions, the system can suggest **potential drug candidates** using molecular SMILES representations and **diffusion-based generative models** for virtual compound generation. Although this project currently uses BioGPT and the same process for analysis, this step demonstrates the potential for AI-assisted RNA-targeted drug discovery.
 
 ---
 
 ## 🔍 System Architecture
+
+
 
 ### Agentic AI Orchestrator
 
@@ -30,8 +43,8 @@ After detecting biomarker regions, the system can suggest **potential drug candi
 
 ### 1️⃣ PDB Parser (Biopython)
 
-* Extracts atomic coordinates, residue sequences, and secondary structure motifs from `.pdb` files.
-* Outputs structured JSON summarizing the RNA structure.
+* Extracts atomic coordinates, residue sequences, and secondary structure motifs from `.pdb` files
+* Outputs structured JSON summarizing the RNA structure
 
 **Example Output:**
 
@@ -46,8 +59,8 @@ After detecting biomarker regions, the system can suggest **potential drug candi
 
 ### 2️⃣ fpocket
 
-* Detects **binding pockets/cavities** in RNA structures.
-* Provides pocket coordinates, volumes, hydrophobicity, and druggability score.
+* Detects **binding pockets/cavities** in RNA structures
+* Provides pocket coordinates, volumes, hydrophobicity, and druggability score
 
 **Example Output:**
 
@@ -68,8 +81,8 @@ After detecting biomarker regions, the system can suggest **potential drug candi
   * Structural motifs
   * Function (ligand/metal binding)
   * Disease relevance
-* Enhanced with **RAG** for incorporating external biomedical knowledge.
-* Can also suggest **drug candidates** via SMILES and diffusion-based reasoning (demonstrative).
+* Enhanced with **RAG** for incorporating external biomedical knowledge
+* Can also suggest **drug candidates** via SMILES and diffusion-based reasoning (demonstrative)
 
 **Example Output:**
 
@@ -82,18 +95,23 @@ After detecting biomarker regions, the system can suggest **potential drug candi
   "potential_drugs": ["CCO", "CCN", "C1=CC=CC=C1"]
 }
 ```
-### Final Inout and Output after Agentic AI Workflow
 
-## Input
-An RNA Gene Sequence Expression (Eg: 8RBJ)
+---
 
-## Output
-STEP 1: Generates 3D structure of RNA Gene
-STEP 2: Biomarker Detection to locate pockets present in the 3D Structure
-STEP 3: BioGPT to find a suitable drug to fill the cavity present
-STEP 4: Enhanced drug for targeted and personalised drug
+## 🧩 Input and Output (Agentic AI Workflow)
 
-Output:
+### Input
+
+An RNA Gene Sequence Expression (e.g., `8RBJ`)
+
+### Workflow Steps
+
+1. Generates 3D structure of RNA gene
+2. Biomarker detection to locate pockets present in the 3D structure
+3. BioGPT to find suitable drugs for the detected pockets
+4. Enhanced drugs for targeted and personalized therapy
+
+### Output Example
 
 ```json
 {
@@ -104,13 +122,14 @@ Output:
   "potential_drugs": ["CCO", "CCN", "C1=CC=CC=C1"]
 }
 ```
-outputs/results.json
+
+**Stored in:** `outputs/results.json`
+
+```json
 {
   "target": "luad_rna",
   "structure_summary": {
-    "chains": [
-      "A"
-    ],
+    "chains": ["A"],
     "total_residues": 46,
     "motifs_detected": []
   },
@@ -174,22 +193,12 @@ outputs/results.json
 }
 ```
 
-
 ---
 
-## 🧩 Workflow
-
-1. **Input:** RNA `.pdb` file (e.g., `luad_rna.pdb`)
-2. **Step 1:** Parse RNA structure (PDB Parser)
-3. **Step 2:** Detect pockets (fpocket)
-4. **Step 3:** Predict biomarkers using **BioGPT with LangChain orchestration and RAG retrieval**
-5. **Step 4 (Drug Discovery):** Suggest potential drugs using SMILES-based generative reasoning
-6. **Output:** Structured JSON report
-
-**Flow Diagram:**
+## 🧩 Workflow Diagram
 
 ```
-PDB Parser  →  fpocket  →  LangChain + RAG →  BioGPT → Drug Discovery (SMILES/Generative) → JSON Report
+PDB Parser → fpocket → LangChain + RAG → BioGPT → Drug Discovery (SMILES/Generative) → JSON Report
 ```
 
 ---
@@ -240,3 +249,6 @@ PDB Parser  →  fpocket  →  LangChain + RAG →  BioGPT → Drug Discovery (S
 * Berman et al., 2000. *The Protein Data Bank: a database of macromolecular structures*
 * LangChain documentation: [https://www.langchain.com/](https://www.langchain.com/)
 * RAG: Lewis et al., 2020. *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*
+
+---
+
