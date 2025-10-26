@@ -244,4 +244,5 @@ PDB Parser → fpocket → LangChain + RAG → BioGPT → Drug Discovery (SMILES
 * RAG: Lewis et al., 2020. *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*
 
 ---
-
+## Youtube link: 
+* https://www.youtube.com/watch?v=fatGJCEF6os
